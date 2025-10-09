@@ -12,9 +12,10 @@ btn.addEventListener("click", () => {
     } else {
         img.src = url + search.value;
         search.value = "";
-        download.classList.remove("dow"); // show download button
+        download.classList.remove("dow");
         download.href = img.src;
-        download.setAttribute("download", "qr-code.png"); // 🧠 important line
+        download.setAttribute("download", "qr-code.png");
+        err.classList.add("err")
     }
 });
 search.addEventListener("keypress", (e)=>{
@@ -22,6 +23,8 @@ search.addEventListener("keypress", (e)=>{
         btn.click();
     }
 })
+
+
 
 
 
