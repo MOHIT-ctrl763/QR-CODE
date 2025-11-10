@@ -1,4 +1,3 @@
-
 let url = "https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=";
 let btn = document.querySelector("button");
 let search = document.querySelector("input");
@@ -7,29 +6,18 @@ let err = document.querySelector(".err");
 let download = document.querySelector(".dow");
 
 btn.addEventListener("click", () => {
-    if (search.value.length == 0) {
-        err.classList.remove("err"); // show error
-    } else {
-        img.src = url + search.value;
-        search.value = "";
-        download.classList.remove("dow");
-        download.href = img.src;
-        download.setAttribute("download", "qr-code.png");
-        err.classList.add("err")
-    }
+  if (search.value.length == 0) {
+    err.classList.remove("err"); // show error
+  } else {
+    img.src = url + search.value;
+    search.value = "";
+    download.classList.remove("dow");
+    download.href = img.src;
+    err.classList.add("err");
+  }
 });
-search.addEventListener("keypress", (e)=>{
-    if(e.key==="Enter"){
-        btn.click();
-    }
-})
-
-
-
-
-
-
-
-
-
-
+search.addEventListener("keypress", (e) => {
+  if (e.key === "Enter") {
+    btn.click();
+  }
+});
